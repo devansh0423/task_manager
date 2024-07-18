@@ -1,0 +1,520 @@
+/* for whole documents */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*for search bar*/
+.search-container {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 5px;
+}
+#search-bar{
+    top: 22rem;
+}
+
+/* Style for the search input */
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+}
+
+/*style for the category button*/
+.dropdown1 {
+    position: absolute; /* Position it absolutely within the container */
+    top: 5px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+    text-align: center;
+    z-index: 2;
+}
+
+.dropdown-button1 {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-button1{
+    margin-left: 150px;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    margin-left: 210px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-option1 {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-option1:hover {
+    background-color: #f1f1f1;
+}
+/* Style for the search button */
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the search button */
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* for hide scroll bar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+
+    background: linear-gradient(to right,rgb(88, 180, 234),rgb(234, 236, 237));
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+
+.container {
+    background-color: #ddd;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px 400px;
+    min-width: 500px;
+    max-width: 1000px;
+    opacity: 1;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.logo {
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.logo img {
+    width: 8rem;
+    border-radius: 50px;
+    background: white;
+}
+
+/* header */
+
+.container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+/* input-section */
+
+header .input-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.input-section input {
+    margin-right: 10px;
+    max-width: 100%;
+}
+
+.max-w-xs {
+    max-width: 20rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.input {
+    text-align: center;
+    border-radius: 50px;
+    height: 3rem;
+    border-width: 2px black solid;
+    flex-shrink: 1;
+    padding: 0rem 1rem;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+/* todofilters */
+
+.todos-filter,
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.filters {
+    margin-top: 10px;
+}
+
+
+.todos-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+    max-height: 54vh;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.todos-list .todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.todo-item {
+    opacity: 1;
+    text-shadow: 0px 0px 5px rgb(21, 27, 217);
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+
+.todo-item p {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.todo-item .todo-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+}
+
+.todo-actions button:not(:last-child) {
+    margin-right: 10px;
+}
+
+.di,
+.ci,
+.ei {
+    pointer-events: none;
+}
+
+
+.line {
+    text-decoration: line-through;
+}
+
+
+/*buttons styling*/
+.btn {
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-radius: 0.5rem;
+    height: 3rem;
+    min-height: 3rem;
+    text-transform: uppercase;
+    border-width: 1px;
+    animation: button-pop var(--animation-btn, .25s)ease-in-out;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1em;
+    text-decoration-line: none;
+    transition: .2s all cubic-bezier(.4, 0, .2, 1);
+    display: inline-flex;
+}
+
+.btn:hover {
+    background-color: rgb(108, 109, 110);
+    color: white;
+}
+
+
+.btn-add {
+    background-color: green;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: white;
+    color: rgb(255, 221, 0);
+}
+
+.btn-success {
+    opacity: 1;
+    background-color: rgb(50, 177, 50);
+    color: white;
+    border-radius:50px;
+}
+
+.btn-success:hover {
+    background-color: white;
+    color: rgb(50, 177, 50);
+}
+
+.btn-error {
+    opacity: 1;
+    background-color: rgb(246, 77, 4);
+    color: white;
+    border-radius:50px;
+}
+
+.btn-error:hover {
+    background-color: white;
+    color: rgb(246, 77, 4);
+}
+
+.btn-primary {
+    opacity: 1;
+    background-color: rgb(57, 33, 179);
+    color: white;
+    border-radius:50px;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    color: rgb(57, 33, 179);
+}
+
+/*
+dropdown*/
+.dropbtn {
+    background-color: green;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: white;
+    color: yellowgreen;
+}
+
+#sort{
+    margin-left: -20rem;
+    /* margin-top: 100rem;
+     */
+}
+.sort-container{
+    margin-top: 2rem;
+}
+#task-deadline{
+    margin-right: -32rem;
+    border-radius: 5px;
+    margin-top: -1.2rem;
+}
+
+#category-button{
+    top: 1rem; 
+    margin-left: 210px;
+}
+
+
+
+
+/* Common styles for all screen sizes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Styles for the main container */
+.container {
+    background-color: #ddd;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 50px auto;
+    min-width: 500px;
+    max-width: 1000px;
+    opacity: 1;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Styles for the logo and input-section */
+.logo {
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.logo img {
+    width: 8rem;
+    border-radius: 50px;
+    background: white;
+}
+
+/* Header styles */
+.container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+/* Date feature styles */
+#task-deadline {
+    margin-top: 20px;
+}
+
+/* Input field for tasks styles */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+#todo-input {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Category button styles */
+.dropdown1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Search bar styles */
+.search-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#search-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+#search-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+    .container {
+        margin: 20px;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+}
